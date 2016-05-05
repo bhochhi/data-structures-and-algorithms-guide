@@ -1,5 +1,11 @@
 # data-structures-and-algorithms-guide
 
+
+##### Big O 
+* http://bigocheatsheet.com/
+* https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
+* 
+
 This is a memo from my learning experience inspired from various sites and blogs, mostly from euler, promgramceek and leetCode.  
 
 
