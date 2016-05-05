@@ -4,7 +4,7 @@
 ##### Big O 
 * http://bigocheatsheet.com/
 * https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
-* 
+* http://stackoverflow.com/questions/487258/plain-english-explanation-of-big-o
 
 This is a memo from my learning experience inspired from various sites and blogs, mostly from euler, promgramceek and leetCode.  
 
