@@ -1,5 +1,8 @@
 # data-structures-and-algorithms-guide
 
+#####Recursive technique: When and how to use it?
+* http://stackoverflow.com/questions/3021/what-is-recursion-and-when-should-i-use-it
+
 
 ##### Big O 
 * http://bigocheatsheet.com/
