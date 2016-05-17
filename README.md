@@ -6,6 +6,11 @@ One of the techniques of solving programming problem is _divide and conquer meth
 
 Recursion methods could be slower and also memory hungry compare to iterative method. You can imagine for every function call, it has to allocate the stack for its parameters and variables, which elevate the risk of stack overflow. However, recursion codes are shorter and more elegant. Using few additional techniques, like _lookup table_ or _tail call optimization_, a lots of duplicates recursion can be avoided to improve the performance and memory usages.
 
+ When its more appropriate:
+ * you have iterative brancing.
+ * implementing with iteration requires lots of coding and produces lots of mutable variables. 
+ * 
+
 
 
 
