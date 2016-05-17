@@ -1,6 +1,10 @@
 # data-structures-and-algorithms-guide
 
 #####Recursive technique: When and how to use it?
+  
+One of the techniques of solving programming problem is _divide and conquer method_, divide the problem into sub-problems, sovle the sub-problems and combine the result to get the solution of the original problem.
+
+
 * http://stackoverflow.com/questions/3021/what-is-recursion-and-when-should-i-use-it
 
 
