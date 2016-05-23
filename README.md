@@ -22,7 +22,28 @@ In this arcticle I would like to focus on recursion, especially when to use recu
  ```
 Here you see the first case is base cases, which you can also call a terminating case and second one is recursive case which should converge towards the terminating cases. 
 
-Sometime, you may need the help of some mutable variables to simplify the solution using recursion, it such as you might want to create an auxiliary function for recursion. So instance, check out the recursive [solution](https://github.com/bhochhi/scala-guide/blob/master/examples/recfun/src/main/scala/recfun/Main.scala#L33) for finding if the string is balance has balanced parenthesis.  
+Sometime, you may need the help of some mutable variables to simplify the solution using recursion, it such as you might want to create an auxiliary function for recursion. So instance, check out the following recursive [solution] for finding if a string has balanced parenthesis:
+```
+def balance(chars: List[Char]): Boolean = {
+   def isBalance(chrs:List[Char],currentCount:Int):Boolean={
+       if(chrs.isEmpty){
+         if(currentCount==0) true else false
+       }
+       else{
+         chrs.head match {
+           case '('=> isBalance(chrs.tail, currentCount+1)
+           case ')' => {
+             if(currentCount<=0) false
+             else isBalance(chrs.tail, currentCount-1)
+           }
+           case _ => isBalance(chrs.tail, currentCount)
+         }
+         
+       }
+     }
+     isBalance(chars, 0);
+  }
+  ```
 
 
  
