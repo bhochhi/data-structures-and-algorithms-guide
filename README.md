@@ -23,7 +23,7 @@ In this arcticle I would like to focus on recursion, especially when to use recu
 Here you see the first case is base cases, which you can also call a terminating case and second one is recursive case which should converge towards the terminating cases. 
 
 Sometime, you may need the help of some mutable variables to simplify the solution using recursion, it such as you might want to create an auxiliary function for recursion. So instance, check out the following recursive [solution] for finding if a string has balanced parenthesis:
-```
+```scala
 def balance(chars: List[Char]): Boolean = {
    def isBalance(chrs:List[Char],currentCount:Int):Boolean={
        if(chrs.isEmpty){
@@ -44,7 +44,7 @@ def balance(chars: List[Char]): Boolean = {
      isBalance(chars, 0);
   }
   ```
-
+Sometime, based on problem, a solution might have multiple recursive call within the recursion, we call this mutliple recursion. Try to avoid such multiple recursion with single recursion if possible, as multiple recursion require exponential time and space. Checkout out the following example of generatring fabonannci series using multiple recursion and single recursion.
 
  
 
