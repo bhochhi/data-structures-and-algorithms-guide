@@ -44,9 +44,26 @@ def balance(chars: List[Char]): Boolean = {
      isBalance(chars, 0);
   }
   ```
-Sometime, based on problem, a solution might have multiple recursive call within the recursion, we call this mutliple recursion. Try to avoid such multiple recursion with single recursion if possible, as multiple recursion require exponential time and space. Checkout out the following example of generatring fabonannci series using multiple recursion and single recursion.
+Sometime, based on problem, a solution might have multiple recursive call within the recursion, we call this mutliple recursion. Try to avoid such multiple recursion with single recursion if possible, as multiple recursion require exponential time and space. Checkout out the following example of generating fabonannci series using multiple recursion and single recursion.
 
- 
+_with multple recursion_ time complexity is 
+```java
+public static void main(String[] args) {
+	  int nth = Integer.parseInt(args[0]);
+	  for(int i = 0; i<nth;i++){
+		  System.out.print(getFib(i)+" ");		  
+	  }
+	}
+
+	private static int getFib(int i) {
+		if(i==0 || i == 1) {
+			return i;
+		}
+		return getFib(i-1)+getFib(i-2);
+	}
+
+```
+
 
 
 
