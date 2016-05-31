@@ -48,28 +48,38 @@ Sometime, based on problem, a solution might have multiple recursive call within
 
 _with multple recursion_ time complexity for such recursive solution is O(2<sup>n</sup>)
 ```java
-public static void main(String[] args) {
-	  int nth = Integer.parseInt(args[0]);
-	  for(int i = 0; i<nth;i++){
-		  System.out.print(getFib(i)+" ");		  
-	  }
+  private static int getFib(int i) {
+	if(i==0 || i == 1) {
+ 	  return i;
+	}
+	  return getFib(i-1)+getFib(i-2);
+  }
+
+```
+
+Let's solve the Same problem using single recursion, as called [corecursion](https://en.wikipedia.org/wiki/Corecursion#Examples). Here is the time complexity has been reduced to O(n). 
+```java
+private static int fibWithSingleRecursion(int n){
+		
+		return usingCorecusion(n,0,1);
 	}
 
-	private static int getFib(int i) {
-		if(i==0 || i == 1) {
-			return i;
+	private static int usingCorecusion(int n, int preFib, int currentFib) {
+		if(n==0 || n == 1) {
+			return n;
 		}
-		return getFib(i-1)+getFib(i-2);
+		else if(n==2){
+			return preFib + currentFib;
+		}
+		else{
+			return usingCorecusion(n-1, currentFib, preFib + currentFib);
+		}
 	}
 
 ```
 
-Let's solve the Same problem using single recursion, as called [corecursion](https://en.wikipedia.org/wiki/Corecursion#Examples)
-```
+Refer to [wiki](https://en.wikipedia.org/wiki/Recursion_(computer_science)) for detail study of recursion. As always with any programming techniques, know you problem, context and tradeoffs.
 
-
-
-```
 
 
 
