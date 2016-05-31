@@ -46,7 +46,7 @@ def balance(chars: List[Char]): Boolean = {
   ```
 Sometime, based on problem, a solution might have multiple recursive call within the recursion, we call this mutliple recursion. Try to avoid such multiple recursion with single recursion if possible, as multiple recursion require exponential time and space. Checkout out the following example of generating fabonannci series using multiple recursion and single recursion.
 
-_with multple recursion_ time complexity is 
+_with multple recursion_ time complexity for such recursive solution is O(2<sup>n</sup>)
 ```java
 public static void main(String[] args) {
 	  int nth = Integer.parseInt(args[0]);
@@ -64,6 +64,12 @@ public static void main(String[] args) {
 
 ```
 
+Let's solve the Same problem using single recursion, as called [corecursion](https://en.wikipedia.org/wiki/Corecursion#Examples)
+```
+
+
+
+```
 
 
 
