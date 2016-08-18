@@ -18,9 +18,17 @@ public class MathExpression {
 			} else if (c == ')') {
 				currentNode = currentNode.parentNode;
 			} else if (c == '+' || c == '-' || c == '*' || c == '/') {
-				
+				currentNode.parentNode = new NodeT();
+				currentNode.parentNode.value = c;
+				currentNode.rightNode = new NodeT();
+				currentNode = currentNode.rightNode;
 			}
-			return 0;
+			else{
+				currentNode.value = c;				
+			}
+			
 		}
+				
+		return 0;
 	}
 }
