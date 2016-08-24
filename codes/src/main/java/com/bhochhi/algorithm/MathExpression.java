@@ -1,16 +1,50 @@
 package com.bhochhi.algorithm;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+import org.junit.runner.Computer;
+
 public class MathExpression {
 
 	public static void main(String[] args) {
 		String exprn = "2+3";
-		System.out.println(compute(exprn));
+		NodeT tree = parseToTree(exprn);
+		System.out.println(Comp1ute(tree));
 	}
 
-	private static int compute(String exprn) {
+	
+	private static int solveUsingStack(String expr){
+		char[] expChars = expr.toCharArray();
+		Deque<Character> stack = new ArrayDeque<Character>();
+		for(char c: expChars){
+			stack.push(c);
+			if(isOperator(c)){
+				stack.push(c);
+			}
+			else if(isOperand(c)){
+				stack.push(c);
+			}
+			else if(isClosingParenthesis(c)){
+				int subTotal = evalParenthesis(stack); 
+				stack.push(subTotal);
+			}
+		}
+		
+		
+		return 0;
+	}
+	
+	
+	private static char[] Comp1ute(NodeT tree) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private static NodeT parseToTree(String exprn) {
 		char[] expChars = exprn.toCharArray();
-		NodeT tree = new NodeT();
-		NodeT currentNode = tree;
+		NodeT top = new NodeT();
+		NodeT currentNode = top;
 		for (char c : expChars) {
 			if (c == '(') {
 				currentNode.leftNode = new NodeT();
@@ -29,6 +63,6 @@ public class MathExpression {
 			
 		}
 				
-		return 0;
+		return top;
 	}
 }
