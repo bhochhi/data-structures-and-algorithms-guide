@@ -10,7 +10,7 @@ public class MathExpression {
 	public static void main(String[] args) {
 		String exprn = "2+3";
 		NodeT tree = parseToTree(exprn);
-		System.out.println(Comp1ute(tree));
+		System.out.println(eval(tree));
 	}
 
 	
@@ -22,11 +22,14 @@ public class MathExpression {
 			if(isOperator(c)){
 				stack.push(c);
 			}
-			else if(isOperand(c)){
+			else if(isOperand(c)){				
 				stack.push(c);
 			}
 			else if(isClosingParenthesis(c)){
 				int subTotal = evalParenthesis(stack); 
+				if(hasMultipleDigit(subTotal)){
+					char[] chars = subTotal.toString().toCharArray();
+				}
 				stack.push(subTotal);
 			}
 		}
@@ -36,7 +39,7 @@ public class MathExpression {
 	}
 	
 	
-	private static char[] Comp1ute(NodeT tree) {
+	private static char[] eval(NodeT tree) {
 		// TODO Auto-generated method stub
 		return null;
 	}
