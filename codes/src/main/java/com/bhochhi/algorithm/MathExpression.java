@@ -9,63 +9,20 @@ public class MathExpression {
 
 	public static void main(String[] args) {
 		String exprn = "2+3";
-		NodeT tree = parseToTree(exprn);
-		System.out.println(eval(tree));
-	}
-
-	
-	private static int solveUsingStack(String expr){
-		char[] expChars = expr.toCharArray();
-		Deque<Character> stack = new ArrayDeque<Character>();
-		for(char c: expChars){
-			stack.push(c);
-			if(isOperator(c)){
-				stack.push(c);
-			}
-			else if(isOperand(c)){				
-				stack.push(c);
-			}
-			else if(isClosingParenthesis(c)){
-				int subTotal = evalParenthesis(stack); 
-				if(hasMultipleDigit(subTotal)){
-					char[] chars = subTotal.toString().toCharArray();
-				}
-				stack.push(subTotal);
-			}
-		}
-		
-		
-		return 0;
+		NodeT tree = parse(exprn);
+		printTree(tree);
 	}
 	
 	
-	private static char[] eval(NodeT tree) {
+	private static void printTree(NodeT tree) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
-	private static NodeT parseToTree(String exprn) {
+	private static NodeT parse(String exprn) {
 		char[] expChars = exprn.toCharArray();
-		NodeT top = new NodeT();
-		NodeT currentNode = top;
-		for (char c : expChars) {
-			if (c == '(') {
-				currentNode.leftNode = new NodeT();
-				currentNode = currentNode.leftNode;
-			} else if (c == ')') {
-				currentNode = currentNode.parentNode;
-			} else if (c == '+' || c == '-' || c == '*' || c == '/') {
-				currentNode.parentNode = new NodeT();
-				currentNode.parentNode.value = c;
-				currentNode.rightNode = new NodeT();
-				currentNode = currentNode.rightNode;
-			}
-			else{
-				currentNode.value = c;				
-			}
-			
-		}
-				
-		return top;
+		NodeT root = new NodeT();
+		
+		return root;
 	}
 }
